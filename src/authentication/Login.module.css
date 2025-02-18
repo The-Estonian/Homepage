@@ -1,0 +1,54 @@
+.login {
+  margin-top: 10%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login button {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+  background: #1a2637;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login button:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
+
+.login label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login label span {
+  padding: 0.5rem;
+}
+.login label input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  color: black;
+  font-size: 1rem;
+  outline: none;
+}
+
+.loginSwitchButton {
+  cursor: pointer;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}

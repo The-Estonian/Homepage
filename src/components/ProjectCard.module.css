@@ -1,0 +1,48 @@
+.projectCard {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 10%;
+  z-index: 3;
+  border: 1px solid white;
+  padding: 2rem;
+  background: #7e7c7c;
+  border-radius: 4px;
+}
+
+.projectCardData {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  color: white;
+}
+
+.projectCardDataInfo {
+  padding: 0.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.githubLink {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: 1px solid white;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+}
+
+.githubLink:hover {
+  background: rgb(0, 0, 0);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

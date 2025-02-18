@@ -1,0 +1,36 @@
+.picture {
+  margin: auto;
+}
+
+.picture img {
+  border-radius: 8px;
+  height: 15rem;
+  width: 30rem;
+  /* margin: 0.3rem; */
+  border: 1px solid transparent;
+}
+
+@media (max-width: 710px) {
+  .picture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .picture img {
+    width: 95%;
+    height: auto;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.spinnerContainer {
+  display: flex;
+  height: 15rem;
+  width: 30rem;
+  align-items: center;
+  justify-content: center;
+}
