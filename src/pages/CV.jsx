@@ -120,7 +120,9 @@ const CV = () => {
         </div>
         <div className={styles['content__links']}>
           <a href='https://github.com/The-Estonian'>GitHub</a>
-          <a href='https://www.linkedin.com/in/jaanus-s-3897a721b/'>LinkedIn</a>
+          <a href='https://www.linkedin.com/in/jaanus-saar-3897a721b/'>
+            LinkedIn
+          </a>
         </div>
       </div>
     </div>
