@@ -1,8 +1,10 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-const API_SECRET = import.meta.env.VITE_API_SECRET || "localhost";
+const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
+
+let backendConnection = styles.ping + ' ' + styles.disconnected;
 
 const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
   const [loginRegister, setLoginRegister] = useState(true);
@@ -11,9 +13,45 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate();
+  const [backendConnection, setBackendConnection] = useState(
+    styles.ping + ' ' + styles.connecting
+  );
 
   useEffect(() => {
     document.title = 'Login';
+  }, []);
+
+  useEffect(() => {
+    const pingBackend = async () => {
+      try {
+        setBackendConnection(styles.ping + ' ' + styles.connecting);
+        const response = await fetch(`${API_URL}/alive`, {
+          method: 'GET',
+          headers: {
+            'X-Client-Secret': `${API_SECRET}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          console.log('Backend not online');
+          setBackendConnection(styles.ping + ' ' + styles.disconnected);
+          return;
+        }
+        const data = await response.json();
+        if (data.ping === 'pong') {
+          console.log('Got pong!');
+
+          setBackendConnection(styles.ping + ' ' + styles.connected);
+        } else {
+          setBackendConnection(styles.ping + ' ' + styles.disconnected);
+        }
+      } catch (error) {
+        console.error('Error pinging backend:', error);
+        setBackendConnection(styles.ping + ' ' + styles.disconnected);
+      }
+    };
+    pingBackend();
   }, []);
 
   const loginOrRegisterHandler = () => {
@@ -105,9 +143,13 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         <span>Password</span>
         <input type='password' ref={password} onKeyDown={handleEnter}></input>
       </label>
-      <button type='submit' onClick={submitHandler}>
-        {loginRegister ? 'Submit' : 'Register'}
-      </button>
+      <div className={styles.backendPing}>
+        <button type='submit' onClick={submitHandler}>
+          {loginRegister ? 'Submit' : 'Register'}
+        </button>
+        <span className={backendConnection}></span>
+      </div>
+
       <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
         {loginRegister
           ? 'Click here to Register account!'

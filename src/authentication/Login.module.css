@@ -1,5 +1,5 @@
 .login {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .login {
@@ -51,4 +51,26 @@
 
 .centered {
   text-align: center;
+}
+
+.backendPing {
+  display: flex;
+  align-items: center;
+}
+
+.ping {
+  background: #4caf50;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+}
+
+.connecting {
+  background: #ffeb3b;
+}
+
+.disconnected {
+  background: #d32f2f;
 }
