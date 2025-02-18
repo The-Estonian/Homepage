@@ -1,5 +1,5 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-const API_SECRET = import.meta.env.VITE_API_SECRET;
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavigationHeader from './NavigationHeader';
