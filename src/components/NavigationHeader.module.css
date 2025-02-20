@@ -23,63 +23,36 @@
 .navigation li {
   padding: 1rem;
   cursor: pointer;
-  background: #1A2637;
-  border: 1px solid #BDC3C7;
+  background: #1a2637;
+  border: 1px solid #bdc3c7;
   border-radius: 8px;
   margin: 0.1rem;
   transition: 0.1s;
 }
 
 .navigation li:hover {
-  border: 1px solid #BDC3C7;
+  border: 1px solid #bdc3c7;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
 }
 
 .notActiveLink {
-  color: #BDC3C7;
+  color: #bdc3c7;
   text-decoration: none;
 }
 
 .activeLink {
-  color: #1ABC9C;
+  color: #1abc9c;
   text-decoration: none;
-}
-
-.server-connection-ready {
-  background: rgb(0, 179, 0) !important;
-  color: black !important;
-  border: none !important;
-  user-select: none;
-}
-.server-connection-working {
-  background: rgb(239, 255, 19) !important;
-  color: black !important;
-  border: none !important;
-  user-select: none;
-}
-.server-connection-busy {
-  background: rgb(255, 36, 36) !important;
-  color: black !important;
-  border: none !important;
-  user-select: none;
-}
-
-.server-connection-ready:hover,
-.server-connection-working:hover,
-.server-connection-busy:hover {
-  transform: rotate(0) !important;
 }
 
 @media (max-width: 710px) {
   .navigation {
-    height: 3rem;
-  }
-  .navigation li:nth-last-of-type(1) {
-    display: none;
-  }
-  .navigation li a {
     padding: 0;
+    width: 90%;
+  }
+  .navigation li {
+    padding: 0.95rem 0.2rem;
   }
 }

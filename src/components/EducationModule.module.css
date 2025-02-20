@@ -46,7 +46,7 @@
   margin-right: 1rem;
 }
 
-.content__langEdu__education__divider__container{
+.content__langEdu__education__divider__container {
   width: 100%;
 }
 
@@ -67,5 +67,13 @@
 }
 
 .content__langEdu__education__divider__focus a:hover {
-  background: #776f6f;;
+  background: #776f6f;
+}
+
+@media (max-width: 710px) {
+  .content__langEdu__education__divider__focus a {
+    padding: 0.3rem;
+    margin: 0.3rem;
+    font-size: 0.95rem;
+  }
 }
