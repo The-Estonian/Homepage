@@ -4,8 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 
-let backendConnection = styles.ping + ' ' + styles.disconnected;
-
 const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
   const [loginRegister, setLoginRegister] = useState(true);
   const firstName = useRef();
@@ -84,10 +82,11 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         }
 
         const data = await response.json();
+
         if (data.login === 'success') {
           navigate('/profile');
           setIsAuthenticated(true);
-          setUser(data.profile);
+          setUser(data);
         }
       } catch (error) {
         console.error('Error:', error);
@@ -102,13 +101,12 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            firstName,
-            lastName,
-            email,
-            password,
+            firstName: firstName.current.value,
+            lastName: lastName.current.value,
+            email: email.current.value,
+            password: password.current.value,
           }),
         });
-
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

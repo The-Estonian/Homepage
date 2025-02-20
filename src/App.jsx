@@ -57,6 +57,26 @@ function App() {
       gtag('config', 'G-VYNENTSWJE');
     };
   }, []);
+
+  useEffect(() => {
+    const newVisit = async () => {
+      const response = await fetch(`${API_URL}/visitor`, {
+        method: 'POST',
+        headers: {
+          'X-Client-Secret': `${API_SECRET}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          referer: document.referrer || 'Direct visit',
+        }),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Visitor: ${response.status}`);
+      }
+    };
+    newVisit();
+  }, []);
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
