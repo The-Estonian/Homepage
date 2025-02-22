@@ -1,23 +1,29 @@
 {
   "name": "family",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Frontend react code for my frontend portfolio site",
+  "homepage": "https://github.com/The-Estonian/Homepage#readme",
+  "bugs": {
+    "url": "https://github.com/The-Estonian/Homepage/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Estonian/Homepage.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "vite.config.js",
   "scripts": {
     "dev": "vite",
     "build": "cross-env VITE_API_URL=https://api.the-estonian.com VITE_API_SECRET=dwtBZuzL3MfDFunRqzY8xejb4UjHP2TL vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.6",
     "family": "file:",
-    "framer-motion": "^7.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.4",
-    "react-router-dom": "^6.4.2",
-    "react-transition-group": "^4.4.5",
-    "redux": "^4.2.0"
+    "react-router-dom": "^6.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

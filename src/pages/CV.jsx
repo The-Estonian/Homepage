@@ -6,11 +6,9 @@ import { educationList } from '../education/educationList';
 
 import image1 from '../assets/images/Jaanus1.jpg';
 import image2 from '../assets/images/Jaanus2.jpg';
-import image3 from '../assets/images/Jaanus3.jpg';
-import image4 from '../assets/images/Jaanus4.jpg';
 import image5 from '../assets/images/Jaanus5.jpg';
 
-const images = [image1, image2, image3, image4, image5];
+const images = [image1, image2, image5];
 
 const CV = () => {
   const [selectedImage, setSelectedImage] = useState(images[1]);

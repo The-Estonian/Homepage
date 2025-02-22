@@ -36,7 +36,7 @@ const RootContainer = ({
         const data = await response.json();
         if (data.status === 'success') {
           setIsAuthenticated(true);
-          setUser(data.profile);
+          setUser(data);
         } else {
           setUser({});
           if (location.pathname === '/profile') {
