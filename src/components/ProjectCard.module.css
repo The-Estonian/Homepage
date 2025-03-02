@@ -6,7 +6,7 @@
   z-index: 3;
   border: 1px solid white;
   padding: 2rem;
-  background: #7e7c7c;
+  background: #1A2637;;
   border-radius: 4px;
 }
 
@@ -18,7 +18,17 @@
 }
 
 .projectCardDataInfo {
+  display: flex;
+  align-items: center;
   padding: 0.5rem;
+}
+
+.skillCard{
+  color: #1A2637;
+  background: white;
+  margin: 0.2rem;
+  padding: 0.25rem;
+  border-radius: 8px;
 }
 
 .buttonContainer {

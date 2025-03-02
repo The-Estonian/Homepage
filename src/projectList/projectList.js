@@ -4,7 +4,7 @@ import pic3 from '../assets/images/jsTesting.jpg';
 import pic4 from '../assets/images/Game.jpg';
 import pic5 from '../assets/images/django-proj.gif';
 import pic6 from '../assets/images/green-style.jpg';
-import pic7 from '../assets/images/collection.jpg';
+import pic7 from '../assets/images/collection.gif';
 import pic8 from '../assets/images/realTimeForum.gif';
 import pic9 from '../assets/images/tetris.gif';
 import pic10 from '../assets/images/golangForum.gif';
@@ -12,6 +12,7 @@ import pic11 from '../assets/images/socialNetwork.jpg';
 import pic12 from '../assets/images/socialGaming.gif';
 import pic13 from '../assets/images/school_bot.png';
 import pic14 from '../assets/images/webshop.gif';
+import pic15 from '../assets/images/groupie-tracker.gif';
 
 export const projectList = [
   {
@@ -21,7 +22,7 @@ export const projectList = [
     description: 'A simple webshop with JWT authentication and a to-do addon.',
     frameworks: ['React', 'Spring-Boot'],
     languages: ['JavaScript', 'Java'],
-    database: 'PostgreSQL as Docker container',
+    database: ['PostgreSQL'],
   },
   {
     id: 13,
@@ -30,7 +31,8 @@ export const projectList = [
     description:
       'Discord bot written to fetch API/GraphQL data from school servers and provide to the students.',
     languages: ['JavaScript', 'NodeJS'],
-    database: 'GraphQL',
+    database: ['GraphQL', 'MongoDB'],
+    live: 'https://discord.gg/7UAs7pAw5D',
   },
   {
     id: 12,
@@ -40,7 +42,7 @@ export const projectList = [
       "Multiplayer game Bomberman with Golang as it's websocket master.",
     frameworks: ['Mini-Framework', 'React'],
     languages: ['JavaScript', 'Golang'],
-    database: 'SQLite',
+    database: ['SQLite'],
   },
   {
     id: 11,
@@ -50,7 +52,7 @@ export const projectList = [
       'Social Network project that includes Posts, Chat, Groups, Events, Likes etc.',
     frameworks: ['React'],
     languages: ['JavaScript', 'Golang'],
-    database: 'SQLite',
+    database: ['SQLite'],
   },
   {
     id: 10,
@@ -59,7 +61,7 @@ export const projectList = [
     description:
       'Simple forum with real time chatting. Golang Templates and Jinja in action.',
     languages: ['Golang'],
-    database: 'SQLite',
+    database: ['SQLite'],
   },
   {
     id: 9,
@@ -74,7 +76,14 @@ export const projectList = [
     url: 'https://github.com/The-Estonian/real-time-hangout',
     description: 'Simple forum with real time chatting.',
     languages: ['JavaScript', 'Golang'],
-    database: 'SQLite',
+    database: ['SQLite'],
+  },
+  {
+    id: 15,
+    img: pic15,
+    url: 'https://github.com/The-Estonian/artist-api',
+    description: 'JSON API Fetching and parsing with Golang Templates',
+    languages: ['JavaScript', 'Golang'],
   },
   {
     id: 7,
@@ -83,6 +92,7 @@ export const projectList = [
     description:
       'Basic HTML, CSS school assignment that required me to implement 7 animals.',
     languages: ['HTML', 'CSS'],
+    live: 'https://the-estonian.github.io/',
   },
   {
     id: 6,
@@ -92,7 +102,7 @@ export const projectList = [
       'Simple forum in Python, users have 3 different skins to pick from.',
     frameworks: ['Django'],
     languages: ['JavaScript', 'Python'],
-    database: 'SQLite',
+    database: ['SQLite'],
   },
   {
     id: 5,
@@ -101,7 +111,7 @@ export const projectList = [
     description: 'Full stack project with Todo, Tic-Tac-Toe.',
     frameworks: ['Django'],
     languages: ['JavaScript', 'Python'],
-    database: 'SQLite',
+    database: ['SQLite'],
   },
   {
     id: 4,

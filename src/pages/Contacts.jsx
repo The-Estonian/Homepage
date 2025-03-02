@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-import LinkedIn from '../assets/images/LinkedIn1.jpg';
-import GitHub from '../assets/images/GitHub1.jpg';
+import LinkedIn from '../assets/logos/InBug-White.png';
+import GitHub from '../assets/logos/github-link.png';
+import Discord from '../assets/logos/Discord-Symbol-White.png';
 import styles from './Contacts.module.css';
 
 const Contacts = () => {
@@ -50,7 +51,7 @@ const Contacts = () => {
   };
 
   return (
-    <div className={styles.picture}>
+    <div className={styles.container}>
       <div className={styles.contactInfoContainer}>
         <div className={styles.contactInfoSlide}>
           <p
@@ -77,16 +78,25 @@ const Contacts = () => {
           </p>
         </div>
       </div>
-      <div>
-        <a
-          href='https://www.linkedin.com/in/jaanus-saar-3897a721b/'
-          target='_blank'
-        >
-          <img className={styles.contactImage} src={LinkedIn} />
-        </a>
-        <a href='https://github.com/The-Estonian' target='_blank'>
-          <img className={styles.contactImage} src={GitHub} />
-        </a>
+      <div className={styles.logoContainer}>
+        <div className={styles.picture}>
+          <a href='https://discord.gg/7UAs7pAw5D' target='_blank'>
+            <img className={styles.contactImage} src={Discord} />
+          </a>
+        </div>
+        <div className={styles.picture}>
+          <a
+            href='https://www.linkedin.com/in/jaanus-saar-3897a721b/'
+            target='_blank'
+          >
+            <img className={styles.contactImage} src={LinkedIn} />
+          </a>
+        </div>
+        <div className={styles.picture}>
+          <a href='https://github.com/The-Estonian' target='_blank'>
+            <img className={styles.contactImage} src={GitHub} />
+          </a>
+        </div>
       </div>
     </div>
   );

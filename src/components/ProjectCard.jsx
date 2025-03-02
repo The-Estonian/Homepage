@@ -12,15 +12,24 @@ const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
         </span>
         {selectedProject.frameworks && (
           <span className={styles.projectCardDataInfo}>
-            Frameworks: {selectedProject.frameworks?.join(', ')}
+            Frameworks:
+            {selectedProject.frameworks.map((each) => {
+              return <span className={styles.skillCard}>{each}</span>;
+            })}
           </span>
         )}
         <span className={styles.projectCardDataInfo}>
-          Languages: {selectedProject.languages?.join(', ')}
+          Languages:
+          {selectedProject.languages.map((each) => {
+            return <span className={styles.skillCard}>{each}</span>;
+          })}
         </span>
         {selectedProject.database && (
           <span className={styles.projectCardDataInfo}>
-            Database: {selectedProject.database}
+            Database:
+            {selectedProject.database.map((each) => {
+              return <span className={styles.skillCard}>{each}</span>;
+            })}
           </span>
         )}
         <div className={styles.buttonContainer}>
@@ -32,6 +41,16 @@ const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
           >
             <span>Github</span>
           </a>
+          {selectedProject.live && (
+            <a
+              className={styles.githubLink}
+              href={selectedProject.live}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <span>Live</span>
+            </a>
+          )}
           <span
             className={styles.githubLink}
             onClick={() => handleCloseSelectedProject()}

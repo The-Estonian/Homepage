@@ -1,38 +1,52 @@
-.picture {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 3%;
+}
+
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  overflow: hidden;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .contactImage {
-  height: 18rem;
-  max-width: 100%;
-  margin: 0.7rem;
-  border-radius: 8px;
+  height: 4rem;
+  width: auto;
+  padding: 0.2rem;
 }
 
-.contactImage:hover {
-  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+.logoContainer {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.picture:last-child{
+  margin-left: 0;
+}
+.picture:nth-last-child(2){
+  margin-right: 0;
 }
 
 .contactInfo {
   position: relative;
   margin: 0.5rem auto;
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 8px;
-  width: 17rem;
-  color: #BDC3C7;
+  width: 15rem;
+  color: #bdc3c7;
   cursor: pointer;
   text-align: center;
 }
 
-.contactInfo:hover {
-  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
-}
 .contactInfoContainer {
-  padding: 1rem;
   width: 100%;
 }
 .contactInfoSlide {
@@ -48,16 +62,20 @@ button {
 }
 
 @media (max-width: 750px) {
-  .picture {
+  .container {
     margin-top: 3rem;
+    font-size: 1.5rem;
   }
-  .picture > div {
+  .contactInfo{
+    width: 100%;
+  }
+  /* .picture > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .contactInfoSlide{
+  } */
+  .contactInfoSlide {
     flex-direction: column;
   }
 }

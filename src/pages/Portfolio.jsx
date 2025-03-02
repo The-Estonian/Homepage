@@ -15,7 +15,7 @@ const Portfolio = () => {
   useEffect(() => {
     document.title = 'Portfolio';
   }, []);
-  
+
   const handleSelectedProject = (data) => {
     setSelectedProject(data);
     handleProjectVisibleSwitch();
@@ -44,7 +44,7 @@ const Portfolio = () => {
         {projectList.map((project) => {
           let projectImg = project.img;
           if (project.id == selectedProject.id) {
-            projectImg = '';
+            return;
           }
           return (
             <Project
