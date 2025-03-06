@@ -80,7 +80,7 @@ const Contacts = () => {
       </div>
       <div className={styles.logoContainer}>
         <div className={styles.picture}>
-          <a href='https://discord.gg/7UAs7pAw5D' target='_blank'>
+          <a href='https://discord.gg/5AnHPtVJPw' target='_blank'>
             <img className={styles.contactImage} src={Discord} />
           </a>
         </div>
