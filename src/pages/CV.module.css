@@ -183,7 +183,13 @@ footer a {
     margin-bottom: 4rem;
   }
   .content__langEdu {
+    width: 90%;
+  }
+  .content__stack {
     width: 80%;
+  }
+  .content__stack__description {
+    width: 50%;
   }
 }
 
@@ -204,7 +210,11 @@ footer a {
     /* border: none; */
   }
   .content__langEdu {
-    width: 90%;
+    width: 95%;
+    margin: 0;
+  }
+  .content__langEdu__languages{
+    margin-left: 0;
   }
 }
 
@@ -214,6 +224,6 @@ footer a {
     width: 80%;
   }
   .content__langEdu {
-    width: 70%;
+    width: 80%;
   }
 }
