@@ -6,11 +6,12 @@
   border: 1px solid transparent;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .content__langEdu__education__divider:before {
   content: '';
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   position: absolute;
   left: 2%;
   bottom: 0;
@@ -28,6 +29,10 @@
   width: 95%;
 }
 
+.content__langEdu__education__divider:hover:before {
+  border-bottom: 1px solid transparent;
+}
+
 .content__langEdu__education__divider:hover {
   border: 1px solid white;
   border-radius: 8px;
@@ -35,19 +40,21 @@
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
+
+
 .content__langEdu__education__divider p {
   padding: 0.25rem;
 }
 
 .content__langEdu__education__divider img {
-  height: 5rem;
-  width: auto;
+  height: auto;
+  width: 5rem;
   border-radius: 8px;
   margin-right: 1rem;
 }
 
 .content__langEdu__education__divider__container {
-  width: 100%;
+  width: 80%;
 }
 
 .content__langEdu__education__divider__focus {

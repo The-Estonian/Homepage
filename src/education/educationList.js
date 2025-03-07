@@ -16,7 +16,8 @@ export const educationList = [
     img: sda,
     name: 'Software Development Academy - Python',
     date: 'Oct 2021 - Jul 2022',
-    desc: 'Weekends, Remote, Zoom, 100% participation.',
+    duration: '9 months',
+    desc: 'Weekends, Remote, Zoom',
     website: 'https://sdacademy.ee/en/courses/python/',
     cert: 'https://app.diplomasafe.com/en-US/diploma/d57339a38bf45772d4c3652e08bc20beb332a3ab0/python-from-scratch',
   },
@@ -26,6 +27,7 @@ export const educationList = [
     img: css,
     name: 'Academind - CSS',
     date: 'Apr 2022 - May 2022',
+    duration: '1 month',
     desc: 'CSS - The Complete Guide 2022 (incl. Flexbox, Grid & Sass)',
     website:
       'https://www.udemy.com/share/1013hy3@toeKBz4KwFywvHnLULEKCTk0yRipOni7bMildjNDWjW9fP8rH8CKOzVnYTyhczqaQw==/',
@@ -37,6 +39,7 @@ export const educationList = [
     img: js,
     name: 'Academind - JavaScript',
     date: 'July 2022 - Sept 2022',
+    duration: '1 month',
     desc: 'JavaScript - The Complete Guide 2022 (Beginner + Advanced)',
     website:
       'https://www.udemy.com/share/1013hy3@toeKBz4KwFywvHnLULEKCTk0yRipOni7bMildjNDWjW9fP8rH8CKOzVnYTyhczqaQw==/',
@@ -48,6 +51,7 @@ export const educationList = [
     img: reactImg,
     name: 'Academind - React',
     date: 'Sept 2022 - Oct 2022',
+    duration: '1 month',
     desc: 'React - The Complete Guide (incl Hooks, React Router, Redux)',
     website:
       'https://www.udemy.com/share/1029Rk3@xxe9wbMsGdW4X6DyGjGZlNxacbBzp85yx2CbEbvK1s8n82plGVXhHXXY4GvZtLCZRg==/',
@@ -59,6 +63,7 @@ export const educationList = [
     img: docker,
     name: 'Academind - Docker & Kubernetes',
     date: 'Sept 2022 - Oct 2022',
+    duration: '1 month',
     desc: 'Docker & Kubernetes: The Practical Guide [2022 Edition]',
     website:
       'https://www.udemy.com/share/101Wby3@NfYRdXIRP__W_y0irHp7kAHhxXiFmBwkohLW9u4zXHO3jSckdpbClzDHyowHjQOiug==/',
@@ -70,6 +75,7 @@ export const educationList = [
     img: github,
     name: 'Academind - Git & GitHub',
     date: 'Sept 2022 - Oct 2022',
+    duration: '1 month',
     desc: 'Git & GitHub - The Practical Guide',
     website:
       'https://www.udemy.com/share/1053Gg3@J2cJUxM5l1rBkZZAYAK1RumAUWawOo7OVqGhmmNK87dh_JSDqEcypeVPBkGbC6gFbw==/',
@@ -81,6 +87,7 @@ export const educationList = [
     img: kj,
     name: 'Kood / Jõhvi',
     date: 'Sept 2023 - Nov 2024',
+    duration: '20 months',
     desc: '01Edu based learning system',
     website: 'https://kood.tech/et/',
     cert: k_j_cert,
@@ -91,8 +98,10 @@ export const educationList = [
     img: bcs,
     name: 'BCS',
     date: 'March 2025 - In progress',
-    desc: '01Edu based learning system',
-    website: 'https://www.bcskoolitus.ee/',
+    duration: '10 months',
+    desc: 'Based on the International Standard Classification of Education Fields of Education and Training (ISCED-F 2013)',
+    website:
+      'https://www.bcskoolitus.ee/koolitus/java-software-developer-e-course-3/',
     // cert: 'bcs file',
   },
 ];

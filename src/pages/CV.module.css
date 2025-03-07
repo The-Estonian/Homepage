@@ -6,7 +6,6 @@
   position: relative;
   margin: auto;
   width: 80%;
-  
 }
 
 .content {
@@ -24,7 +23,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 .content__stack__picture {
   margin: 1rem;
@@ -36,11 +35,22 @@
   box-shadow: rgba(226, 226, 226, 0.2) 0px 7px 29px 0px;
 }
 .content__stack__description {
-  text-align: left;
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.content__stack__description__skill {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
 .content__stack__description p {
   padding: 0.25rem;
 }
+
 .content__contacts {
   display: flex;
   margin: auto;
@@ -49,7 +59,7 @@
 .content__contacts .phone,
 .content__contacts .email {
   padding: 0.3rem 0.8rem;
-  border-right: 1px solid black;
+  border-right: 1px solid white;
   text-align: center;
 }
 .content__contacts .location {
@@ -68,7 +78,7 @@
   padding: 0.5rem 1rem;
 }
 .content__profileSummary {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin: auto;
   padding: 1rem;
   width: 60%;
@@ -84,8 +94,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin: 1rem;
+  width: 60%;
 }
 .content__langEdu__languages {
   display: flex;
@@ -93,7 +104,7 @@
   justify-content: center;
   align-items: center;
   width: 30%;
-  margin: 1rem;
+  margin-left: 1rem;
   margin-bottom: 4rem;
 }
 
@@ -102,7 +113,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
 }
@@ -118,7 +129,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-left: 1px solid black;
+  border-left: 1px solid white;
   padding-left: 1.5rem;
   padding-bottom: 0.12rem;
   margin-bottom: 1rem;
@@ -175,6 +186,14 @@ footer a {
   .content__profileSummary {
     padding: 1rem;
     width: 100%;
+  }
+  .content__stack__description {
+    width: 80%;
+  }
+  .content__stack__description__skill {
+    padding: 0.3rem;
+    margin: 0.2rem;
+    border: none;
   }
 }
 

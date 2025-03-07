@@ -3,6 +3,7 @@ import EducationModule from '../components/EducationModule';
 
 import styles from './CV.module.css';
 import { educationList } from '../education/educationList';
+import { skillList } from '../education/skillList';
 
 import image1 from '../assets/images/Jaanus1.jpg';
 import image2 from '../assets/images/Jaanus2.jpg';
@@ -34,12 +35,11 @@ const CV = () => {
       <div className={styles.content}>
         <div className={styles['content__stack']}>
           <div className={styles['content__stack__description']}>
-            <p>Python, Django</p>
-            <p>JavaScript, NodeJS, React</p>
-            <p>PostgreSQL, MySQL, MongoDB</p>
-            <p>Golang</p>
-            <p>Java, Spring-Boot</p>
-            <p>DevOps, AWS</p>
+            {skillList.slice(0).map((skill) => (
+              <span className={styles['content__stack__description__skill']}>
+                {skill}
+              </span>
+            ))}
           </div>
           <div className={styles['content__stack__picture']}>
             <img src={selectedImage} alt='Profile image' />

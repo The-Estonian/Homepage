@@ -1,0 +1,15 @@
+export const skillList = [
+  'Python',
+  'Django',
+  'JavaScript',
+  'NodeJS',
+  'React',
+  'PostgreSQL',
+  'MySQL',
+  'MongoDB',
+  'Golang',
+  'Java',
+  'Spring-Boot',
+  'DevOps',
+  'AWS',
+];

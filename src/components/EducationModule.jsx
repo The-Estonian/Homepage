@@ -12,9 +12,12 @@ const EducationModule = (props) => {
       }}
     >
       <img src={props.listData.img} alt='education provider image' />
-      <div className={styles['content__langEdu__education__divider__container']}>
+      <div
+        className={styles['content__langEdu__education__divider__container']}
+      >
         <p>{props.listData.name}</p>
-        <p>{props.listData.date}</p>
+        {!menu && <p>{props.listData.duration}</p>}
+        {menu && <p>{props.listData.date}</p>}
         <p>{props.listData.desc}</p>
         {menu && (
           <div
