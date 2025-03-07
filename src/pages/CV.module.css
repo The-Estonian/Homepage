@@ -38,6 +38,8 @@
   width: 25%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__stack__description__skill {
@@ -180,6 +182,9 @@ footer a {
     margin: 1rem;
     margin-bottom: 4rem;
   }
+  .content__langEdu {
+    width: 80%;
+  }
 }
 
 @media (max-width: 710px) {
@@ -190,10 +195,16 @@ footer a {
   .content__stack__description {
     width: 80%;
   }
+  .content__stack {
+    width: 90%;
+  }
   .content__stack__description__skill {
     padding: 0.3rem;
     margin: 0.2rem;
-    border: none;
+    /* border: none; */
+  }
+  .content__langEdu {
+    width: 90%;
   }
 }
 
@@ -201,5 +212,8 @@ footer a {
   .content__profileSummary {
     padding: 1rem;
     width: 80%;
+  }
+  .content__langEdu {
+    width: 70%;
   }
 }
