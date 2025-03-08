@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-
 import styles from './EducationModule.module.css';
 
 const EducationModule = ({ listData, openTab, setOpenTab }) => {
-  // const [menu, setMenu] = useState(false);
   return (
     <div
       className={styles['content__langEdu__education__divider']}
       onClick={() => {
-        // setMenu(!menu);
-        setOpenTab(listData.id);
+        if (openTab === listData.id) {
+          setOpenTab(null);
+        } else {
+          setOpenTab(listData.id);
+        }
       }}
     >
       <img src={listData.img} alt='education provider image' />
