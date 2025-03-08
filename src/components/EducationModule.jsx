@@ -2,32 +2,33 @@ import React, { useState } from 'react';
 
 import styles from './EducationModule.module.css';
 
-const EducationModule = (props) => {
-  const [menu, setMenu] = useState(false);
+const EducationModule = ({ listData, openTab, setOpenTab }) => {
+  // const [menu, setMenu] = useState(false);
   return (
     <div
       className={styles['content__langEdu__education__divider']}
       onClick={() => {
-        setMenu(!menu);
+        // setMenu(!menu);
+        setOpenTab(listData.id);
       }}
     >
-      <img src={props.listData.img} alt='education provider image' />
+      <img src={listData.img} alt='education provider image' />
       <div
         className={styles['content__langEdu__education__divider__container']}
       >
-        <p>{props.listData.name}</p>
-        {!menu && <p>{props.listData.duration}</p>}
-        {menu && <p>{props.listData.date}</p>}
-        <p>{props.listData.desc}</p>
-        {menu && (
+        <p>{listData.name}</p>
+        {!openTab === listData.id && <p>{listData.duration}</p>}
+        {openTab === listData.id && <p>{listData.date}</p>}
+        <p>{listData.desc}</p>
+        {openTab === listData.id && (
           <div
             className={styles['content__langEdu__education__divider__focus']}
           >
-            <a href={props.listData.website} target='_blank'>
+            <a href={listData.website} target='_blank'>
               Link to course site!
             </a>
-            {props.listData.cert && (
-              <a href={props.listData.cert} target='_blank'>
+            {listData.cert && (
+              <a href={listData.cert} target='_blank'>
                 Certificate
               </a>
             )}

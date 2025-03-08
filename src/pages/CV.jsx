@@ -13,6 +13,7 @@ const images = [image1, image2, image5];
 
 const CV = () => {
   const [selectedImage, setSelectedImage] = useState(images[1]);
+  const [openTab, setOpenTab] = useState(null);
   useEffect(() => {
     document.title = 'CV';
   }, []);
@@ -35,9 +36,12 @@ const CV = () => {
       <div className={styles.content}>
         <div className={styles['content__stack']}>
           <div className={styles['content__stack__description']}>
-            {skillList.slice(0).map((skill) => (
-              <span className={styles['content__stack__description__skill']}>
-                {skill}
+            {skillList.slice(0).map((item) => (
+              <span
+                key={item.id}
+                className={styles['content__stack__description__skill']}
+              >
+                {item.skill}
               </span>
             ))}
           </div>
@@ -106,7 +110,12 @@ const CV = () => {
               .slice(0)
               .reverse()
               .map((listItem) => (
-                <EducationModule key={listItem.id} listData={listItem} />
+                <EducationModule
+                  key={listItem.id}
+                  listData={listItem}
+                  openTab={openTab}
+                  setOpenTab={setOpenTab}
+                />
               ))}
           </div>
         </div>
