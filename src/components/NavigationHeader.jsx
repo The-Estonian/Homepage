@@ -8,7 +8,7 @@ const NavigationHeader = ({ isAuthenticated, logOutHandler }) => {
   return (
     <ul className={styles.navigation}>
       <li>
-        <NavLink to='/cv' className={linkChecker}>
+        <NavLink to='/' className={linkChecker}>
           CV
         </NavLink>
       </li>

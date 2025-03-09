@@ -84,9 +84,9 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         const data = await response.json();
 
         if (data.login === 'success') {
-          navigate('/profile');
           setIsAuthenticated(true);
           setUser(data);
+          navigate('/profile');
         }
       } catch (error) {
         console.error('Error:', error);

@@ -1,29 +1,29 @@
 {
-  "name": "family",
+  "name": "frontend",
   "version": "1.0.0",
   "description": "Frontend react code for my frontend portfolio site",
-  "homepage": "https://github.com/The-Estonian/Homepage#readme",
-  "bugs": {
-    "url": "https://github.com/The-Estonian/Homepage/issues"
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/The-Estonian/Homepage.git"
   },
-  "license": "ISC",
+  "keywords": [],
   "author": "",
+  "license": "ISC",
   "type": "commonjs",
-  "main": "vite.config.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "cross-env VITE_API_URL=https://api.the-estonian.com vite build",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage"
+  "bugs": {
+    "url": "https://github.com/The-Estonian/Homepage/issues"
   },
+  "homepage": "https://github.com/The-Estonian/Homepage#readme",
   "dependencies": {
     "family": "file:",
+    "frontend": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
@@ -36,7 +36,6 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/coverage-istanbul": "^3.0.8",
-    "cross-env": "^7.0.3",
     "jsdom": "^26.0.0",
     "nodemon": "^3.1.9",
     "vite": "^6.1.0",

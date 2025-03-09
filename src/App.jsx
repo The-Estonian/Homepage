@@ -34,28 +34,12 @@ function App() {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    setUser({});
+    setUser(null);
     setIsAuthenticated(false);
   };
 
   useEffect(() => {
     document.title = 'Profile';
-  }, []);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VYNENTSWJE';
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-VYNENTSWJE');
-    };
   }, []);
 
   useEffect(() => {
@@ -91,7 +75,14 @@ function App() {
           />
         }
       >
-        <Route index element={<Navigate to='/cv' />} />
+        <Route
+          index
+          element={
+            <Suspense fallback={<Spinner />}>
+              <CV />
+            </Suspense>
+          }
+        />
         <Route path='/skills' element={<Skills />} />
         <Route
           path='/portfolio'
@@ -106,14 +97,6 @@ function App() {
           element={
             <Suspense fallback={<Spinner />}>
               <Contacts />
-            </Suspense>
-          }
-        />
-        <Route
-          path='/cv'
-          element={
-            <Suspense fallback={<Spinner />}>
-              <CV />
             </Suspense>
           }
         />
@@ -135,7 +118,7 @@ function App() {
             />
           }
         />
-        <Route path='*' element={<Navigate to='/cv' />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Route>
     )
   );

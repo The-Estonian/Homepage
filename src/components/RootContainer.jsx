@@ -8,7 +8,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import styles from './RootContainer.module.css';
 
-
 const RootContainer = ({
   isAuthenticated,
   setIsAuthenticated,
@@ -20,7 +19,7 @@ const RootContainer = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
+    if (user != null) {
       const checkStatus = async () => {
         const response = await fetch(`${API_URL}/status`, {
           method: 'GET',
@@ -38,7 +37,7 @@ const RootContainer = ({
           setIsAuthenticated(true);
           setUser(data);
         } else {
-          setUser({});
+          setUser(null);
           if (location.pathname === '/profile') {
             navigate('/login');
           }
@@ -47,12 +46,10 @@ const RootContainer = ({
       try {
         checkStatus();
       } catch (e) {
-        if (location.pathname === '/profile') {
-          navigate('/login');
-        }
+        navigate('/login');
       }
     }
-  }, [location, navigate]);
+  }, []);
 
   const handleLogout = () => {
     logOutHandler();

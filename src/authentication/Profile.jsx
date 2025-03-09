@@ -1,6 +1,7 @@
 import styles from './Profile.module.css';
 
 const Profile = ({ user }) => {
+
   return (
     <div className={styles.profileContainer}>
       <span>User ID: {user?.profile?.id}</span>
