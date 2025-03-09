@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import EducationModule from '../../components/EducationModule';
+import EducationModule from '../../components/EducationModule/EducationModule';
 import Skills from '../Skills/Skills';
 
 import { educationList } from '../../education/educationList';
@@ -43,7 +43,7 @@ const CV = () => {
             ))}
           </div>
           <div className={styles['content__stack__picture']}>
-            <img src={selectedImage} alt='Profile image' />
+            <img src={selectedImage} alt='profile image' />
           </div>
         </div>
         <div className={styles['content__profileSummary']}>

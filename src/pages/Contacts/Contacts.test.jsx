@@ -34,17 +34,74 @@ describe('Contacts tests', () => {
     );
   });
 
-  it('Copies name to clipboard when clicked', async () => {
+  it('Copies data to clipboard when clicked', async () => {
     render(<Contacts />);
 
     const nameElement = screen.getByText('Jaanus Saar');
+    const phoneElement = screen.getByText('+37258218417');
+    const addressElement = screen.getByText('Europe, Estonia, Tallinn');
+    const emailElement = screen.getByText('Zaar2213@gmail.com');
+
     fireEvent.click(nameElement);
-    expect(screen.getByText('Copied to Clipboard')).toBeInTheDocument(
-      'Jaanus Saar'
+    const findName = await screen.findByText('Copied to Clipboard');
+    expect(findName).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(
+          screen.queryByText('Copied to Clipboard')
+        ).not.toBeInTheDocument();
+      },
+      { timeout: 1100 }
+    );
+
+    fireEvent.click(phoneElement);
+    const findPhone = await screen.findByText('Copied to Clipboard');
+    expect(findPhone).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(
+          screen.queryByText('Copied to Clipboard')
+        ).not.toBeInTheDocument();
+      },
+      { timeout: 1100 }
+    );
+
+    fireEvent.click(addressElement);
+    const findAddress = await screen.findByText('Copied to Clipboard');
+    expect(findAddress).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(
+          screen.queryByText('Copied to Clipboard')
+        ).not.toBeInTheDocument();
+      },
+      { timeout: 1100 }
+    );
+
+    fireEvent.click(emailElement);
+    const findEmail = await screen.findByText('Copied to Clipboard');
+    expect(findEmail).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(
+          screen.queryByText('Copied to Clipboard')
+        ).not.toBeInTheDocument();
+      },
+      { timeout: 1100 }
     );
 
     await waitFor(() => {
-      expect(screen.getByText('Jaanus Saar')).toBeInTheDocument();
+      expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(4);
+      expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Jaanus Saar');
+      expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
+        '+37258218417'
+      );
+      expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
+        'Europe, Estonia, Tallinn'
+      );
+      expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
+        'Zaar2213@gmail.com'
+      );
     });
   });
 });
