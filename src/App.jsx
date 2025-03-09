@@ -12,7 +12,7 @@ import {
 import RootContainer from './components/RootContainer';
 import Skills from './pages/Skills/Skills';
 const Portfolio = lazy(() => import('./pages/Portfolio'));
-const Contacts = lazy(() => import('./pages/Contacts'));
+const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
 const CV = lazy(() => import('./pages/CV/CV'));
 const Profile = lazy(() => import('./authentication/Profile'));
 import Login from './authentication/Login';

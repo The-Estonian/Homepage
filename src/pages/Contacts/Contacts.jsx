@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-import LinkedIn from '../assets/logos/InBug-White.png';
-import GitHub from '../assets/logos/github-link.png';
-import Discord from '../assets/logos/Discord-Symbol-White.png';
+import LinkedIn from '../../assets/logos/InBug-White.png';
+import GitHub from '../../assets/logos/github-link.png';
+import Discord from '../../assets/logos/Discord-Symbol-White.png';
 import styles from './Contacts.module.css';
 
 const Contacts = () => {
@@ -80,21 +80,42 @@ const Contacts = () => {
       </div>
       <div className={styles.logoContainer}>
         <div className={styles.picture}>
-          <a href='https://discord.gg/5AnHPtVJPw' target='_blank'>
-            <img className={styles.contactImage} src={Discord} />
+          <a
+            href='https://discord.gg/5AnHPtVJPw'
+            target='_blank'
+            data-testid='discord-link'
+          >
+            <img
+              className={styles.contactImage}
+              src={Discord}
+              alt='Discord Logo'
+            />
           </a>
         </div>
         <div className={styles.picture}>
           <a
             href='https://www.linkedin.com/in/jaanus-saar-3897a721b/'
             target='_blank'
+            data-testid='linkedin-link'
           >
-            <img className={styles.contactImage} src={LinkedIn} />
+            <img
+              className={styles.contactImage}
+              src={LinkedIn}
+              alt='LinkedIn Logo'
+            />
           </a>
         </div>
         <div className={styles.picture}>
-          <a href='https://github.com/The-Estonian' target='_blank'>
-            <img className={styles.contactImage} src={GitHub} />
+          <a
+            href='https://github.com/The-Estonian'
+            target='_blank'
+            data-testid='github-link'
+          >
+            <img
+              className={styles.contactImage}
+              src={GitHub}
+              alt='Github Logo'
+            />
           </a>
         </div>
       </div>
