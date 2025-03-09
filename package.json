@@ -16,7 +16,7 @@
   "main": "vite.config.js",
   "scripts": {
     "dev": "vite",
-    "build": "cross-env VITE_API_URL=https://api.the-estonian.com VITE_API_SECRET=dwtBZuzL3MfDFunRqzY8xejb4UjHP2TL vite build",
+    "build": "cross-env VITE_API_URL=https://api.the-estonian.com vite build",
     "preview": "vite preview",
     "test": "vitest",
     "test:watch": "vitest --watch",
