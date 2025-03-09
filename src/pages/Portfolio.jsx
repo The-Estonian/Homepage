@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Project from '../components/Project';
 import ProjectCard from '../components/ProjectCard';
-import Modal from '../components/Modal';
+import Modal from '../components/Modal/Modal';
 
 import styles from './Portfolio.module.css';
 

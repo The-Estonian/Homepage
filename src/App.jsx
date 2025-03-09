@@ -10,10 +10,10 @@ import {
 } from 'react-router-dom';
 
 import RootContainer from './components/RootContainer';
-import Skills from './pages/Skills';
+import Skills from './pages/Skills/Skills';
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Contacts = lazy(() => import('./pages/Contacts'));
-const CV = lazy(() => import('./pages/CV'));
+const CV = lazy(() => import('./pages/CV/CV'));
 const Profile = lazy(() => import('./authentication/Profile'));
 import Login from './authentication/Login';
 import Spinner from './components/Spinner';

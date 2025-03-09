@@ -17,7 +17,7 @@ const EducationModule = ({ listData, openTab, setOpenTab }) => {
         className={styles['content__langEdu__education__divider__container']}
       >
         <p>{listData.name}</p>
-        {!openTab === listData.id && <p>{listData.duration}</p>}
+        {!(openTab === listData.id) && <p>{listData.duration}</p>}
         {openTab === listData.id && <p>{listData.date}</p>}
         <p>{listData.desc}</p>
         {openTab === listData.id && (

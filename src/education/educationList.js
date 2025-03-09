@@ -8,6 +8,7 @@ import kj from '../assets/logos/kj.png';
 import bcs from '../assets/logos/bcs.svg';
 
 import k_j_cert from './k-j-cert.pdf';
+import bcs_cert from './bcs_cert.pdf';
 
 export const educationList = [
   {
@@ -102,6 +103,6 @@ export const educationList = [
     desc: 'Based on the International Standard Classification of Education Fields of Education and Training (ISCED-F 2013)',
     website:
       'https://www.bcskoolitus.ee/koolitus/java-software-developer-e-course-3/',
-    // cert: 'bcs file',
+    cert: bcs_cert,
   },
 ];
