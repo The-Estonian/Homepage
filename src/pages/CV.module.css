@@ -43,13 +43,6 @@
   align-items: center;
 }
 
-.content__stack__description__skill {
-  padding: 0.3rem;
-  margin: 0.2rem;
-  border: 1px solid white;
-  border-radius: 8px;
-}
-
 .content__stack__description p {
   padding: 0.25rem;
 }
@@ -177,11 +170,10 @@ footer a {
   .content__langEdu {
     width: 80%;
   }
-   .content__stack {
+  .content__stack {
     width: 70%;
   }
 }
-
 
 @media (max-width: 1050px) {
   .container {
@@ -219,17 +211,12 @@ footer a {
   .content__stack {
     width: 90%;
   }
-  .content__stack__description__skill {
-    padding: 0.3rem;
-    margin: 0.2rem;
-    /* border: none; */
-  }
+
   .content__langEdu {
     width: 95%;
     margin: 0;
   }
-  .content__langEdu__languages{
+  .content__langEdu__languages {
     margin-left: 0;
   }
 }
-

@@ -1,0 +1,13 @@
+.content__stack__description__skill {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+@media (max-width: 710px) {
+  .content__stack__description__skill {
+    padding: 0.3rem;
+    margin: 0.2rem;
+  }
+}

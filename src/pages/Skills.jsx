@@ -1,9 +1,11 @@
-import React from 'react'
+import styles from './Skills.module.css';
 
-const Skills = () => {
+const Skills = ({ item }) => {
   return (
-    <div>Skills</div>
-  )
-}
+    <span className={styles['content__stack__description__skill']}>
+      {item.skill}
+    </span>
+  );
+};
 
-export default Skills
+export default Skills;

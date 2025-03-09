@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import EducationModule from '../components/EducationModule';
+import Skills from './Skills';
 
-import styles from './CV.module.css';
 import { educationList } from '../education/educationList';
 import { skillList } from '../education/skillList';
+
+import styles from './CV.module.css';
 
 import image1 from '../assets/images/Jaanus1.jpg';
 import image2 from '../assets/images/Jaanus2.jpg';
@@ -37,12 +39,7 @@ const CV = () => {
         <div className={styles['content__stack']}>
           <div className={styles['content__stack__description']}>
             {skillList.slice(0).map((item) => (
-              <span
-                key={item.id}
-                className={styles['content__stack__description__skill']}
-              >
-                {item.skill}
-              </span>
+              <Skills key={item.id} item={item} />
             ))}
           </div>
           <div className={styles['content__stack__picture']}>
