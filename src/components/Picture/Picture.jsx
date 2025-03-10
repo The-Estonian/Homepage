@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import styles from './Picture.module.css';
 
-import Spinner from './Spinner';
+import Spinner from '../Spinner';
 
 const Picture = (props) => {
   const [loading, setLoading] = useState(true);

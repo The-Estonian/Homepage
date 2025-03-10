@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-import Project from '../components/Project';
-import ProjectCard from '../components/ProjectCard';
-import Modal from '../components/Modal/Modal';
+import Project from '../../components/Project';
+import ProjectCard from '../../components/ProjectCard';
+import Modal from '../../components/Modal/Modal';
 
 import styles from './Portfolio.module.css';
 
-import { projectList } from '../projectList/projectList';
+import { projectList } from '../../projectList/projectList';
 
 const Portfolio = () => {
   const [projectOpen, setProjectOpen] = useState(false);

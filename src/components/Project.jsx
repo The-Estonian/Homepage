@@ -1,4 +1,4 @@
-import Picture from './Picture';
+import Picture from './Picture/Picture';
 
 import styles from './Project.module.css';
 

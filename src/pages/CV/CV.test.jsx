@@ -8,7 +8,7 @@ import image2 from '../../assets/images/Jaanus2.jpg';
 
 vi.useFakeTimers();
 
-describe('CV Component', () => {
+describe('CV component tests', () => {
   it('CV renders correctly', () => {
     render(<CV />);
 

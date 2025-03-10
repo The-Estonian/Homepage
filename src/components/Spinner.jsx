@@ -2,7 +2,7 @@ import styles from './Spinner.module.css';
 
 const Spinner = () => {
   return (
-    <div className={styles.spinner}>
+    <div data-testid='spinner' className={styles.spinner}>
       <div></div>
       <div></div>
     </div>

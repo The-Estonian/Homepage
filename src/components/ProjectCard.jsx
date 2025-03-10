@@ -1,6 +1,6 @@
 import styles from './ProjectCard.module.css';
 
-import Picture from './Picture';
+import Picture from './Picture/Picture';
 
 const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
   return (

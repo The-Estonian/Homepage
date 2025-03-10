@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Modal from './Modal';
 import { vi } from 'vitest';
 
-describe('Modal Component', () => {
+describe('Modal component tests', () => {
   it('should not render when project is not open', () => {
     const handleClose = vi.fn();
 

@@ -11,7 +11,7 @@ import {
 
 import RootContainer from './components/RootContainer';
 import Skills from './pages/Skills/Skills';
-const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Portfolio = lazy(() => import('./pages/Portfolio/Portfolio'));
 const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
 const CV = lazy(() => import('./pages/CV/CV'));
 const Profile = lazy(() => import('./authentication/Profile'));
