@@ -9,7 +9,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import RootContainer from './components/RootContainer';
+import RootContainer from './components/RootContainer/RootContainer';
 import Skills from './pages/Skills/Skills';
 const Portfolio = lazy(() => import('./pages/Portfolio/Portfolio'));
 const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
