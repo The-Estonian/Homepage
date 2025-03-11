@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/The-Estonian/Homepage#readme",
   "dependencies": {
-    "family": "file:",
     "frontend": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
