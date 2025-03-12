@@ -1,9 +1,11 @@
 import styles from './Profile.module.css';
 
 const Profile = ({ user }) => {
-
+  if (!user) {
+    return <p data-testid='empty-profile'>No user data to display!</p>;
+  }
   return (
-    <div className={styles.profileContainer}>
+    <div data-testid='profile-container' className={styles.profileContainer}>
       <span>User ID: {user?.profile?.id}</span>
       <span>First name: {user?.profile?.firstName}</span>
       <span>Last name: {user?.profile?.lastName}</span>
