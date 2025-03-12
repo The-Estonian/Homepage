@@ -23,19 +23,23 @@ function App() {
   const [user, setUser] = useState(null);
 
   const logOutHandler = async () => {
-    const response = await fetch(`${API_URL}/logout`, {
-      method: 'POST',
-      headers: {
-        'X-Client-Secret': `${API_SECRET}`,
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+    try {
+      const response = await fetch(`${API_URL}/logout`, {
+        method: 'POST',
+        headers: {
+          'X-Client-Secret': `${API_SECRET}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      setUser(null);
+      setIsAuthenticated(false);
+    } catch (error) {
+      console.error('Logout tracking failed:', error);
     }
-    setUser(null);
-    setIsAuthenticated(false);
   };
 
   useEffect(() => {
@@ -44,18 +48,22 @@ function App() {
 
   useEffect(() => {
     const newVisit = async () => {
-      const response = await fetch(`${API_URL}/visitor`, {
-        method: 'POST',
-        headers: {
-          'X-Client-Secret': `${API_SECRET}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          referer: document.referrer || 'Direct visit',
-        }),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! Visitor: ${response.status}`);
+      try {
+        const response = await fetch(`${API_URL}/visitor`, {
+          method: 'POST',
+          headers: {
+            'X-Client-Secret': `${API_SECRET}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            referer: document.referrer || 'Direct visit',
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! Visitor: ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Visitor tracking failed:', error);
       }
     };
     newVisit();

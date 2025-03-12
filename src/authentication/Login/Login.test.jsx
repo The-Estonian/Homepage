@@ -45,7 +45,7 @@ describe('Login tests', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation();
     global.fetch = vi.fn().mockResolvedValueOnce({
       ok: true,
-      json: async () => ({ status: 'fail' }),
+      json: async () => ({ ping: 'pong' }),
     });
     render(
       <MemoryRouter>
