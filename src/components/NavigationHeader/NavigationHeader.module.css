@@ -13,7 +13,7 @@
 }
 
 .navigation li a {
-  padding: 1rem;
+  padding: 0.8rem 1.5rem;
 }
 
 .navigation .authNav {
@@ -21,7 +21,8 @@
 }
 
 .navigation li {
-  padding: 1rem;
+  display: flex;
+  overflow: hidden;
   cursor: pointer;
   background: #1a2637;
   border: 1px solid #bdc3c7;
@@ -52,7 +53,7 @@
     padding: 0;
     width: 90%;
   }
-  .navigation li {
-    padding: 0.95rem 0.2rem;
+  .navigation li a{
+    padding: 0.4rem 0.7rem;
   }
 }
