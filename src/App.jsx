@@ -15,7 +15,7 @@ const Portfolio = lazy(() => import('./pages/Portfolio/Portfolio'));
 const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
 const CV = lazy(() => import('./pages/CV/CV'));
 const Profile = lazy(() => import('./authentication/Profile/Profile'));
-import Login from './authentication/Login';
+import Login from './authentication/Login/Login';
 import Spinner from './components/Spinner';
 
 function App() {
