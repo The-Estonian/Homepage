@@ -82,7 +82,6 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         }
 
         const data = await response.json();
-
         if (data.login === 'success') {
           setIsAuthenticated(true);
           setUser(data);
@@ -90,7 +89,7 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         }
       } catch (error) {
         console.error('Error:', error);
-        logOutHandler(false);
+        logOutHandler();
       }
     } else {
       try {
@@ -135,11 +134,16 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
       )}
       <label>
         <span>Email</span>
-        <input type='text' ref={email}></input>
+        <input type='text' ref={email} placeholder='email'></input>
       </label>
       <label>
         <span>Password</span>
-        <input type='password' ref={password} onKeyDown={handleEnter}></input>
+        <input
+          type='password'
+          ref={password}
+          onKeyDown={handleEnter}
+          placeholder='password'
+        ></input>
       </label>
       <div className={styles.backendPing}>
         <button type='submit' onClick={submitHandler}>

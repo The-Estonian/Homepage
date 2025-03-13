@@ -3,7 +3,6 @@ import { MemoryRouter } from 'react-router-dom';
 import RootContainer from './RootContainer';
 import { vi } from 'vitest';
 
-global.fetch = vi.fn();
 const mockNavigate = vi.fn();
 
 vi.mock('react-router-dom', async () => {
@@ -19,7 +18,7 @@ describe('RootContainer tests', () => {
   it('Should be able to call backend /status successfully', async () => {
     const setAuth = vi.fn();
     const setUser = vi.fn();
-    global.fetch.mockResolvedValueOnce({
+    global.fetch = vi.fn().mockResolvedValueOnce({
       ok: true,
       json: async () => ({ status: 'success', user: { name: 'asd' } }),
     });
@@ -75,7 +74,7 @@ describe('RootContainer tests', () => {
     const logOutHandler = vi.fn();
     const setAuth = vi.fn();
     const setUser = vi.fn();
-    global.fetch.mockResolvedValueOnce({
+    global.fetch = vi.fn().mockResolvedValueOnce({
       ok: true,
       json: async () => ({ status: 'success', user: { name: 'asd' } }),
     });
