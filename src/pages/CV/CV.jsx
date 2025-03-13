@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
 import React, { useEffect, useState } from 'react';
 import EducationModule from '../../components/EducationModule/EducationModule';
 import Skills from '../Skills/Skills';
@@ -16,8 +18,35 @@ const images = [image1, image2, image5];
 const CV = () => {
   const [selectedImage, setSelectedImage] = useState(images[1]);
   const [openTab, setOpenTab] = useState(null);
+  const [activeSkillList, setActiveSkillList] = useState([]);
   useEffect(() => {
     document.title = 'CV';
+  }, []);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const response = await fetch(`${API_URL}/getSkills`, {
+          method: 'GET',
+          headers: {
+            'X-Client-Secret': `${API_SECRET}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          console.log('Backend not online');
+          setActiveSkillList(skillList);
+          return;
+        }
+        const data = await response.json();
+        setActiveSkillList(data);
+      } catch (error) {
+        console.error('Error getting skill list from backend:', error);
+        setActiveSkillList(skillList);
+      }
+    };
+    fetchSkills();
   }, []);
 
   useEffect(() => {
@@ -38,7 +67,7 @@ const CV = () => {
       <div className={styles.content}>
         <div className={styles['content__stack']}>
           <div className={styles['content__stack__description']}>
-            {skillList.slice(0).map((item) => (
+            {activeSkillList.slice(0).map((item) => (
               <Skills key={item.id} item={item} />
             ))}
           </div>
