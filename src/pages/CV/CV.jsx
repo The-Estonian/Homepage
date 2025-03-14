@@ -3,6 +3,7 @@ const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
 import React, { useEffect, useState } from 'react';
 import EducationModule from '../../components/EducationModule/EducationModule';
 import Skills from '../Skills/Skills';
+import Spinner from '../../components/Spinner';
 
 import { educationList } from '../../education/educationList';
 import { skillList } from '../../education/skillList';
@@ -19,6 +20,7 @@ const CV = () => {
   const [selectedImage, setSelectedImage] = useState(images[1]);
   const [openTab, setOpenTab] = useState(null);
   const [activeSkillList, setActiveSkillList] = useState([]);
+  const [skillsLoading, setSkillsLoading] = useState(true);
   useEffect(() => {
     document.title = 'CV';
   }, []);
@@ -37,13 +39,16 @@ const CV = () => {
         if (!response.ok) {
           console.log('Backend not online');
           setActiveSkillList(skillList);
+          setSkillsLoading(false);
           return;
         }
         const data = await response.json();
         setActiveSkillList(data);
+        setSkillsLoading(false);
       } catch (error) {
         console.error('Error getting skill list from backend:', error);
         setActiveSkillList(skillList);
+        setSkillsLoading(false);
       }
     };
     fetchSkills();
@@ -67,9 +72,13 @@ const CV = () => {
       <div className={styles.content}>
         <div className={styles['content__stack']}>
           <div className={styles['content__stack__description']}>
-            {activeSkillList.slice(0).map((item) => (
-              <Skills key={item.id} item={item} />
-            ))}
+            {skillsLoading ? (
+              <Spinner />
+            ) : (
+              activeSkillList
+                .slice(0)
+                .map((item) => <Skills key={item.id} item={item} />)
+            )}
           </div>
           <div className={styles['content__stack__picture']}>
             <img src={selectedImage} alt='profile image' />

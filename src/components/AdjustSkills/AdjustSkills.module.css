@@ -1,0 +1,41 @@
+.adjustSkills {
+  display: flex;
+  flex-direction: column;
+}
+
+.adjustSkills_add {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+}
+.adjustSkills_add label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.adjustSkills_add label input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  color: black;
+  font-size: 1rem;
+  outline: none;
+}
+
+.adjustSkills_add_button {
+  padding: 1rem;
+  color: #bdc3c7;
+  border-radius: 8px;
+  background: #1a2637;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+.adjustSkills_add_button:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
+
