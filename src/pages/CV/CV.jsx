@@ -21,10 +21,14 @@ const CV = () => {
   const [openTab, setOpenTab] = useState(null);
   const [activeSkillList, setActiveSkillList] = useState([]);
   const [skillsLoading, setSkillsLoading] = useState(true);
+
+  const [activeEducationList, setActiveEducationList] = useState([]);
+  const [educationLoading, setEducationLoading] = useState(true);
   useEffect(() => {
     document.title = 'CV';
   }, []);
 
+  // skills
   useEffect(() => {
     const fetchSkills = async () => {
       try {
@@ -52,6 +56,36 @@ const CV = () => {
       }
     };
     fetchSkills();
+  }, []);
+
+  // education
+  useEffect(() => {
+    const fetchEducation = async () => {
+      try {
+        const response = await fetch(`${API_URL}/getEducation`, {
+          method: 'GET',
+          headers: {
+            'X-Client-Secret': `${API_SECRET}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          console.log('Backend not online');
+          setActiveEducationList(educationList);
+          setEducationLoading(false);
+          return;
+        }
+        const data = await response.json();
+        setActiveEducationList(data);
+        setEducationLoading(false);
+      } catch (error) {
+        console.error('Error getting education list from backend:', error);
+        setActiveEducationList(educationList);
+        setEducationLoading(false);
+      }
+    };
+    fetchEducation();
   }, []);
 
   useEffect(() => {
@@ -141,17 +175,21 @@ const CV = () => {
             </div>
           </div>
           <div className={styles['content__langEdu__education']}>
-            {educationList
-              .slice(0)
-              .reverse()
-              .map((listItem) => (
-                <EducationModule
-                  key={listItem.id}
-                  listData={listItem}
-                  openTab={openTab}
-                  setOpenTab={setOpenTab}
-                />
-              ))}
+            {educationLoading ? (
+              <Spinner />
+            ) : (
+              activeEducationList
+                .slice(0)
+                .reverse()
+                .map((listItem) => (
+                  <EducationModule
+                    key={listItem.id}
+                    listData={listItem}
+                    openTab={openTab}
+                    setOpenTab={setOpenTab}
+                  />
+                ))
+            )}
           </div>
         </div>
         <div className={styles['content__contacts']}>

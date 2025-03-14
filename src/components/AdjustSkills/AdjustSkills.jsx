@@ -83,7 +83,7 @@ const AdjustSkills = () => {
   }, []);
   return (
     <div className={styles.adjustSkills}>
-      <div>
+      <div className={styles.skillContainer}>
         {skillList.slice(0).map((item) => (
           <>
             <Skills

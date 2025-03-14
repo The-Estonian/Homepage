@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.skillContainer{
+display: flex;
+flex-flow: wrap;
+}
+
 .adjustSkills_add {
   display: flex;
   flex-direction: column;

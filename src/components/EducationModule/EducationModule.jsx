@@ -1,6 +1,11 @@
 import styles from './EducationModule.module.css';
 
-const EducationModule = ({ listData, openTab, setOpenTab }) => {
+const EducationModule = ({
+  listData,
+  openTab,
+  setOpenTab,
+  removeEducationHandler,
+}) => {
   return (
     <div
       className={styles['content__langEdu__education__divider']}
@@ -35,6 +40,17 @@ const EducationModule = ({ listData, openTab, setOpenTab }) => {
           </div>
         )}
       </div>
+      {removeEducationHandler && (
+        <span
+          className={styles['content__stack__description__education_remove']}
+          onClick={(e) => {
+            e.stopPropagation();
+            removeEducationHandler(listData.id);
+          }}
+        >
+          x
+        </span>
+      )}
     </div>
   );
 };

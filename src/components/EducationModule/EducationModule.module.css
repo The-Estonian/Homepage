@@ -40,8 +40,6 @@
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
-
-
 .content__langEdu__education__divider p {
   padding: 0.25rem;
 }
@@ -75,6 +73,17 @@
 
 .content__langEdu__education__divider__focus a:hover {
   background: #776f6f;
+}
+
+.content__stack__description__education_remove {
+  padding: 1rem;
+  background: rgb(172, 0, 0);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content__stack__description__education_remove:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
 }
 
 @media (max-width: 710px) {
