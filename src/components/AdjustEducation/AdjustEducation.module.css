@@ -1,0 +1,67 @@
+.education_container{
+  height: 50vh;
+  overflow-x: scroll;
+}
+
+.adjustEducation_add {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 5%;
+  left: 38%;
+}
+
+.adjustEducation_add_button {
+  padding: 1rem;
+  margin-top: auto;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  color: #bdc3c7;
+  border-radius: 8px;
+  background: #1a2637;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+}
+
+.adjustEducation_add_button:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
+
+.adjustEducation_add_titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.adjustEducation_add_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.adjustEducation_add_titles span {
+  padding: 0.17rem;
+}
+
+.adjustEducation_add_inputs input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 0.2rem;
+  color: black;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+@media (max-width: 1300px) {
+  .adjustEducation_add {
+    left: 34%;
+  }
+}
+@media (max-width: 970px) {
+  .adjustEducation_add {
+    left: 30%;
+  }
+}
+@media (max-width: 800px) {
+  .adjustEducation_add {
+    left: 20%;
+  }
+}

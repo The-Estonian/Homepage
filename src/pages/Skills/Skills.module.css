@@ -3,6 +3,26 @@
   margin: 0.2rem;
   border: 1px solid white;
   border-radius: 8px;
+  overflow: hidden;
+}
+
+.content__stack__description__skill_admin {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding-right: 0;
+  overflow: hidden;
+}
+
+.content__stack__description__skill_remove{
+  padding: 0.3rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  background: rgb(172, 0, 0);
+  border-radius:0 8px 8px 0;
+  margin-left: 0.2rem;
+  cursor: pointer;
 }
 
 @media (max-width: 710px) {

@@ -1,0 +1,45 @@
+.profileContainer {
+  margin-top: 0,5rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.profileData {
+  margin: 0.12rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.507);
+}
+
+.profile_menu_buttons {
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  background: #1a2637;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  margin: 0.5rem;
+  transition: 0.1s;
+  padding: 0.8rem 1.5rem;
+  width: fit-content;
+}
+
+.profile_menu_buttons:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
+
+.dataContainer {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1300px) {
+  .profileContainer{
+    width: 75%;
+  }
+}
+@media (max-width: 630px) {
+  .profileContainer{
+    width: 95%;
+  }
+}
