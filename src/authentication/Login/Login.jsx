@@ -63,59 +63,59 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
   };
 
   const submitHandler = async (e) => {
-    if (loginRegister) {
-      try {
-        const response = await fetch(`${API_URL}/login`, {
-          method: 'POST',
-          headers: {
-            'X-Client-Secret': `${API_SECRET}`,
-            'Content-Type': 'application/json',
-          },
-          credentials: 'include',
-          body: JSON.stringify({
-            email: email.current.value,
-            password: password.current.value,
-          }),
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (data.login === 'success') {
-          setIsAuthenticated(true);
-          setUser(data);
-          navigate('/profile');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        logOutHandler();
+    // if (loginRegister) {
+    try {
+      const response = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'X-Client-Secret': `${API_SECRET}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          email: email.current.value,
+          password: password.current.value,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    } else {
-      try {
-        const response = await fetch(`${API_URL}/register`, {
-          method: 'POST',
-          headers: {
-            'X-Client-Secret': `${API_SECRET}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName: firstName.current.value,
-            lastName: lastName.current.value,
-            email: email.current.value,
-            password: password.current.value,
-          }),
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
 
-        const data = await response.json();
-        console.log('Success:', data);
-      } catch (error) {
-        console.error('Error:', error);
+      const data = await response.json();
+      if (data.login === 'success') {
+        setIsAuthenticated(true);
+        setUser(data);
+        navigate('/profile');
       }
+    } catch (error) {
+      console.error('Error:', error);
+      logOutHandler();
     }
+    // } else {
+    //   try {
+    //     const response = await fetch(`${API_URL}/register`, {
+    //       method: 'POST',
+    //       headers: {
+    //         'X-Client-Secret': `${API_SECRET}`,
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({
+    //         firstName: firstName.current.value,
+    //         lastName: lastName.current.value,
+    //         email: email.current.value,
+    //         password: password.current.value,
+    //       }),
+    //     });
+    //     if (!response.ok) {
+    //       throw new Error(`HTTP error! Status: ${response.status}`);
+    //     }
+
+    //     const data = await response.json();
+    //     console.log('Success:', data);
+    //   } catch (error) {
+    //     console.error('Error:', error);
+    //   }
+    // }
   };
 
   return (
@@ -151,12 +151,11 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         </button>
         <span className={backendConnection}></span>
       </div>
-
-      <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
+      {/* <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
         {loginRegister
           ? 'Click here to Register account!'
           : 'Login to your account!'}
-      </p>
+      </p> */}
     </div>
   );
 };

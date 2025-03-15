@@ -6,7 +6,6 @@ const Project = ({ project, handleSelectedProject, projectImg }) => {
   return (
     <div
       className={styles.project}
-      onClick={handleSelectedProject.bind(this, project)}
     >
       <Picture img={projectImg} />
     </div>
