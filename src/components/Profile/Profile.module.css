@@ -11,7 +11,7 @@
   border: 1px solid rgba(255, 255, 255, 0.507);
 }
 
-.skillSwitch {
+.profile_menu_buttons {
   display: flex;
   overflow: hidden;
   cursor: pointer;
@@ -24,14 +24,13 @@
   width: fit-content;
 }
 
-.skillSwitch:hover {
+.profile_menu_buttons:hover {
   box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
 }
 
 .dataContainer {
   display: flex;
   margin-bottom: 2rem;
-  /* width: 100%; */
 }
 
 @media (max-width: 1300px) {
