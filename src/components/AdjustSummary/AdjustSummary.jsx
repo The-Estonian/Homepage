@@ -2,6 +2,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
 
 import { useState, useEffect, useRef } from 'react';
+import Summary from '../../pages/Summary/Summary';
 
 import styles from './AdjustSummary.module.css';
 
@@ -63,7 +64,9 @@ const AdjustBio = () => {
   }, []);
   return (
     <span className={styles.summaryContainer}>
-      <div className={styles.summary}>{activeSummary}</div>
+      <div className={styles.summary}>
+        <Summary summary={activeSummary} />
+      </div>
       <div className={styles.summary_input_container}>
         <textarea
           className={styles.summary_input}

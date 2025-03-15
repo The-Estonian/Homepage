@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AdjustSkills from '../AdjustSkills/AdjustSkills';
 import AdjustEducation from '../AdjustEducation/AdjustEducation';
-import AdjustSummary from "../AdjustBio/AdjustSummary"
+import AdjustSummary from '../AdjustSummary/AdjustSummary';
 import styles from './Profile.module.css';
 
 const Profile = ({ user }) => {
