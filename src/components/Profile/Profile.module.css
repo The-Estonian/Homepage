@@ -33,3 +33,14 @@
   margin-bottom: 2rem;
   /* width: 100%; */
 }
+
+@media (max-width: 1300px) {
+  .profileContainer{
+    width: 75%;
+  }
+}
+@media (max-width: 630px) {
+  .profileContainer{
+    width: 95%;
+  }
+}

@@ -49,12 +49,33 @@
   text-decoration: none;
 }
 
+@media (max-width: 520px) {
+  .navigation li a {
+    padding: 0.2rem 0.4rem;
+  }
+  .navigation {
+    width: 100%;
+  }
+}
+
 @media (max-width: 710px) {
   .navigation {
     padding: 0;
     width: 90%;
   }
-  .navigation li a{
+  .navigation li a {
     padding: 0.4rem 0.7rem;
+  }
+}
+
+@media (max-width: 910px) {
+  .navigation li a {
+    padding: 0.4rem 0.7rem;
+  }
+  .notActiveLink{
+    padding: 0.4rem 0.7rem;
+  }
+  .navigation {
+    padding: 0;
   }
 }

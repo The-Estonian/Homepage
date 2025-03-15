@@ -69,6 +69,7 @@
   box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
   padding: 0.5rem;
   margin: 0.5rem;
+  text-decoration: none;
 }
 
 .content__langEdu__education__divider__focus a:hover {
