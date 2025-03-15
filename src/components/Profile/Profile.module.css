@@ -37,6 +37,12 @@
   .profileContainer{
     width: 75%;
   }
+  .profile_menu_buttons{
+    padding: 0.4rem 0.7rem;
+  }
+  .dataContainer{
+    margin-top: 2rem;
+  }
 }
 @media (max-width: 630px) {
   .profileContainer{
