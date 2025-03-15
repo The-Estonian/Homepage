@@ -108,8 +108,8 @@ const AdjustEducation = () => {
   }, []);
 
   return (
-    <div>
-      <div className={styles.educationContainer}>
+    <div className={styles.education_container}>
+      <div>
         {educationList
           .slice(0)
           .reverse()

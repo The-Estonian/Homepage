@@ -90,7 +90,7 @@ export const educationList = [
     date: 'Sept 2023 - Nov 2024',
     duration: '20 months',
     desc: '01Edu based learning system',
-    website: 'https://kood.tech/et/',
+    website: 'https://kood.tech/en/',
     cert: k_j_cert,
   },
   {

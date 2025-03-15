@@ -1,3 +1,8 @@
+.education_container{
+  height: 50vh;
+  overflow-x: scroll;
+}
+
 .adjustEducation_add {
   display: flex;
   flex-direction: row;
