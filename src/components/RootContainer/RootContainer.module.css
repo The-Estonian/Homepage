@@ -4,16 +4,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", serif;
+  font-family: 'Raleway', serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.08rem;
-  color: #BDC3C7;
+  color: #bdc3c7;
 }
 
 :root {
-  background: #1A2637;
+  background: #1a2637;
 }
 
 .mainContainer {

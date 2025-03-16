@@ -15,7 +15,7 @@ const Portfolio = () => {
   const [projectOpen, setProjectOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
   const [activeProjectList, setActiveProjectList] = useState([]);
-  const [projectListLoading, setrojectListLoading] = useState(true);
+  const [projectListLoading, setProjectListLoading] = useState(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -31,20 +31,22 @@ const Portfolio = () => {
         if (!response.ok) {
           console.log('Backend not online');
           setActiveProjectList(projectList);
-          setrojectListLoading(false);
+          setProjectListLoading(false);
           return;
         }
         const data = await response.json();
+        console.log(data);
+
         setActiveProjectList(data.projects);
-        setrojectListLoading(false);
+        setProjectListLoading(false);
       } catch (error) {
         console.error('Error getting projects from backend:', error);
         setActiveProjectList(projectList);
-        setrojectListLoading(false);
+        setProjectListLoading(false);
       }
     };
     fetchProjects();
-  });
+  }, []);
 
   useEffect(() => {
     document.title = 'Portfolio';
@@ -67,6 +69,7 @@ const Portfolio = () => {
     <>
       {projectOpen && (
         <ProjectCard
+          key={selectedProject.id}
           selectedProject={selectedProject}
           handleCloseSelectedProject={handleCloseSelectedProject}
         />
@@ -78,20 +81,23 @@ const Portfolio = () => {
         {projectListLoading ? (
           <Spinner />
         ) : (
-          activeProjectList.map((project) => {
-            let projectImg = project.img;
-            if (project.id == selectedProject.id) {
-              return;
-            }
-            return (
-              <Project
-                key={project.id}
-                project={project}
-                projectImg={projectImg}
-                handleSelectedProject={handleSelectedProject}
-              />
-            );
-          })
+          activeProjectList
+            .slice()
+            .reverse()
+            .map((project) => {
+              let projectImg = project.img;
+              if (project.id == selectedProject.id) {
+                return;
+              }
+              return (
+                <Project
+                  key={project.id}
+                  project={project}
+                  projectImg={projectImg}
+                  handleSelectedProject={handleSelectedProject}
+                />
+              );
+            })
         )}
       </div>
     </>

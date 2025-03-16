@@ -13,21 +13,21 @@ const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
         {selectedProject.frameworks && (
           <span className={styles.projectCardDataInfo}>
             Frameworks:
-            {selectedProject.frameworks.map((each) => {
+            {selectedProject.frameworks.split(',').map((each) => {
               return <span className={styles.skillCard}>{each}</span>;
             })}
           </span>
         )}
         <span className={styles.projectCardDataInfo}>
           Languages:
-          {selectedProject.languages.map((each) => {
+          {selectedProject.languages.split(',').map((each) => {
             return <span className={styles.skillCard}>{each}</span>;
           })}
         </span>
         {selectedProject.database && (
           <span className={styles.projectCardDataInfo}>
             Database:
-            {selectedProject.database.map((each) => {
+            {selectedProject.database.split(',').map((each) => {
               return <span className={styles.skillCard}>{each}</span>;
             })}
           </span>
