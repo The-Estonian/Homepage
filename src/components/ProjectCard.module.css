@@ -6,7 +6,7 @@
   z-index: 3;
   border: 1px solid white;
   padding: 2rem;
-  background: #1A2637;;
+  background: #1a2637;
   border-radius: 4px;
 }
 
@@ -23,11 +23,11 @@
   padding: 0.5rem;
 }
 
-.skillCard{
-  color: #1A2637;
+.skillCard {
+  color: #1a2637;
   background: white;
   margin: 0.2rem;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 8px;
 }
 
@@ -36,11 +36,16 @@
   justify-content: space-between;
 }
 
+.button_container_git {
+  display: flex;
+}
+
 .githubLink {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
+  margin-left: 0.5rem;
   border: 1px solid white;
   cursor: pointer;
   user-select: none;

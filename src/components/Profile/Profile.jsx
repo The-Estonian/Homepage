@@ -2,12 +2,14 @@ import { useState } from 'react';
 import AdjustSkills from '../AdjustSkills/AdjustSkills';
 import AdjustEducation from '../AdjustEducation/AdjustEducation';
 import AdjustSummary from '../AdjustSummary/AdjustSummary';
+import AdjustProjects from '../AdjustProjects/AdjustProjects';
 import styles from './Profile.module.css';
 
 const Profile = ({ user }) => {
   const [showSkills, setShowSkills] = useState(false);
   const [showEducation, setShowEducation] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
 
   const skillHandler = () => {
     if (showEducation) {
@@ -16,14 +18,21 @@ const Profile = ({ user }) => {
     if (showSummary) {
       summaryHandler();
     }
+    if (showProjects) {
+      setShowProjects();
+    }
     setShowSkills(!showSkills);
   };
+
   const educationHandler = () => {
     if (showSkills) {
       skillHandler();
     }
     if (showSummary) {
       summaryHandler();
+    }
+    if (showProjects) {
+      setShowProjects();
     }
     setShowEducation(!showEducation);
   };
@@ -35,8 +44,25 @@ const Profile = ({ user }) => {
     if (showEducation) {
       educationHandler();
     }
+    if (showProjects) {
+      setShowProjects();
+    }
     setShowSummary(!showSummary);
   };
+
+  const projectHandler = () => {
+    if (showSkills) {
+      skillHandler();
+    }
+    if (showEducation) {
+      educationHandler();
+    }
+    if (showSummary) {
+      summaryHandler();
+    }
+    setShowProjects(!showProjects);
+  };
+
   if (!user) {
     return <p data-testid='empty-profile'>No user data to display!</p>;
   }
@@ -55,11 +81,15 @@ const Profile = ({ user }) => {
         <span className={styles.profile_menu_buttons} onClick={summaryHandler}>
           Summary
         </span>
+        <span className={styles.profile_menu_buttons} onClick={projectHandler}>
+          Projects
+        </span>
       </div>
       {showSkills && <AdjustSkills />}
       {showEducation && <AdjustEducation />}
       {showSummary && <AdjustSummary />}
-      {!showSkills && !showEducation && !showSummary && (
+      {showProjects && <AdjustProjects />}
+      {!showSkills && !showEducation && !showSummary && !showProjects && (
         <>
           <span className={styles.profileData}>
             User ID: {user?.profile?.id}

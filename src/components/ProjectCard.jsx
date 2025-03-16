@@ -13,34 +13,40 @@ const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
         {selectedProject.frameworks && (
           <span className={styles.projectCardDataInfo}>
             Frameworks:
-            {selectedProject.frameworks.map((each) => {
+            {selectedProject.frameworks.split(',').map((each) => {
               return <span className={styles.skillCard}>{each}</span>;
             })}
           </span>
         )}
         <span className={styles.projectCardDataInfo}>
           Languages:
-          {selectedProject.languages.map((each) => {
+          {selectedProject.languages.split(',').map((each) => {
             return <span className={styles.skillCard}>{each}</span>;
           })}
         </span>
         {selectedProject.database && (
           <span className={styles.projectCardDataInfo}>
             Database:
-            {selectedProject.database.map((each) => {
+            {selectedProject.database.split(',').map((each) => {
               return <span className={styles.skillCard}>{each}</span>;
             })}
           </span>
         )}
         <div className={styles.buttonContainer}>
-          <a
-            className={styles.githubLink}
-            href={selectedProject.url}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <span>Github</span>
-          </a>
+          <div className={styles.button_container_git}>
+            {selectedProject.url.split(',').map((url) => {
+              return (
+                <a
+                  className={styles.githubLink}
+                  href={url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <span>Github</span>
+                </a>
+              );
+            })}
+          </div>
           {selectedProject.live && (
             <a
               className={styles.githubLink}

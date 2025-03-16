@@ -1,0 +1,85 @@
+.profile_project_data {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 0.5rem;
+}
+
+.profile_project_data {
+  display: flex;
+  align-items: center;
+}
+
+.profile_project_data_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_project_data_container span {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 0.12rem;
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.profile_project_data_container_delete {
+  background: rgb(247, 69, 69);
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 0.12rem;
+  padding: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile_project_data_container_delete:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
+
+.adjustProject_add {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  height: 15rem;
+  width: 30rem;
+  border: 1px solid transparent;
+  margin: auto;
+}
+
+.adjustProject_add_titles {
+  display: flex;
+  flex-direction: column;
+}
+.adjustProject_add_titles span {
+  margin: 0.2rem;
+}
+
+.adjustProject_add_inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.adjustProject_add_inputs input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 0.2rem;
+  color: black;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.adjustProject_add_button {
+  display: flex;
+  padding: 1rem;
+  color: #bdc3c7;
+  border-radius: 8px;
+  background: #1a2637;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.adjustProject_add_button:hover {
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 7px 29px 0px;
+}
