@@ -13,7 +13,6 @@ Frontend react code for my frontend portfolio site
 - [How to Run the Project](#how-to-run-the-project)
   - [Run Locally](#run-locally)
 - [Screenshots](#screenshots)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -43,6 +42,10 @@ To run the project locally, follow these steps:
    npm install
    npm run dev
    ```
+
+## Screenshots
+
+![project GIF](/src/assets/images/portfolio_site.gif)
 
 ## Contributing
 
