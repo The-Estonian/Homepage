@@ -33,14 +33,20 @@ const ProjectCard = ({ selectedProject, handleCloseSelectedProject }) => {
           </span>
         )}
         <div className={styles.buttonContainer}>
-          <a
-            className={styles.githubLink}
-            href={selectedProject.url}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <span>Github</span>
-          </a>
+          <div className={styles.button_container_git}>
+            {selectedProject.url.split(',').map((url) => {
+              return (
+                <a
+                  className={styles.githubLink}
+                  href={url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <span>Github</span>
+                </a>
+              );
+            })}
+          </div>
           {selectedProject.live && (
             <a
               className={styles.githubLink}
