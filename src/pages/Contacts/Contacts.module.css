@@ -28,22 +28,27 @@
   margin-top: 2rem;
 }
 
-.picture:last-child{
+.picture:last-child {
   margin-left: 0;
 }
-.picture:nth-last-child(2){
+.picture:nth-last-child(2) {
   margin-right: 0;
 }
 
 .contactInfo {
   position: relative;
-  margin: 0.5rem auto;
+  margin: 0.5rem;
   padding: 1rem 0;
   border-radius: 8px;
   width: 15rem;
   color: #bdc3c7;
   cursor: pointer;
   text-align: center;
+  border: 1px solid transparent;
+}
+
+.contactInfo:hover {
+  border: 1px solid white;
 }
 
 .contactInfoContainer {
@@ -66,7 +71,7 @@ button {
     margin-top: 3rem;
     font-size: 1.5rem;
   }
-  .contactInfo{
+  .contactInfo {
     width: 100%;
   }
   /* .picture > div {

@@ -19,37 +19,35 @@ const RootContainer = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user != null) {
-      const checkStatus = async () => {
-        try {
-          const response = await fetch(`${API_URL}/status`, {
-            method: 'GET',
-            headers: {
-              'X-Client-Secret': `${API_SECRET}`,
-              'Content-Type': 'application/json',
-            },
-            credentials: 'include',
-          });
-          if (!response.ok) {
-            return;
-          }
-          const data = await response.json();
-          if (data.status === 'success') {
-            setIsAuthenticated(true);
-            setUser(data);
-          } else {
-            setUser(null);
-            if (location.pathname === '/profile') {
-              navigate('/login');
-            }
-          }
-        } catch (error) {
-          console.error('Error fetching status:', error);
-          navigate('/login');
+    const checkStatus = async () => {
+      try {
+        const response = await fetch(`${API_URL}/status`, {
+          method: 'GET',
+          headers: {
+            'X-Client-Secret': `${API_SECRET}`,
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        });
+        if (!response.ok) {
+          return;
         }
-      };
-      checkStatus();
-    }
+        const data = await response.json();
+        if (data.status === 'success') {
+          setIsAuthenticated(true);
+          setUser(data);
+        } else {
+          setUser(null);
+          if (location.pathname === '/profile') {
+            navigate('/login');
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching status:', error);
+        navigate('/login');
+      }
+    };
+    checkStatus();
   }, []);
 
   const handleLogout = () => {
