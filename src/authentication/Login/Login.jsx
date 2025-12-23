@@ -149,13 +149,41 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         <button type='submit' onClick={submitHandler}>
           {loginRegister ? 'Submit' : 'Register'}
         </button>
-        <span className={backendConnection}></span>
       </div>
       {/* <p className={styles.loginSwitchButton} onClick={loginOrRegisterHandler}>
         {loginRegister
           ? 'Click here to Register account!'
           : 'Login to your account!'}
       </p> */}
+      <div className={styles.roadmap}>
+        <div className={styles.road}>
+          <div className={styles.status_container}>
+            <span>Frontend status: </span>
+            <span className={backendConnection}></span>
+          </div>
+          <span>Browser(HTTPS)</span>
+          <span>&darr;     &uarr;</span>
+          <span>CloudFront(AWS, HTTPS)</span>
+          <span>&darr;     &uarr;</span>
+        </div>
+        <div className={styles.road}>
+          <div className={styles.status_container}>
+            <span>Backend status: </span>
+            <span className={backendConnection}></span>
+          </div>
+          <div className={styles.divider}>
+            <span>Nginx(HTTPS)</span>
+            <span>&darr;     &uarr;</span>
+            <div className={styles.divider}>
+              <span>Docker</span>
+              <span>&darr;     &uarr;</span>
+              <span>Backend(Container)</span>
+              <span>&darr;     &uarr;</span>
+              <span>PostgreSQL(Container)</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
