@@ -162,9 +162,13 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
             <span className={backendConnection}></span>
           </div>
           <span>Browser(HTTPS)</span>
-          <span>&darr;     &uarr;</span>
-          <span>CloudFront(AWS, HTTPS)</span>
-          <span>&darr;     &uarr;</span>
+          <span>&darr; &uarr;</span>
+          <div className={styles.divider}>
+            <span>CloudFront(AWS, HTTPS)</span>
+            <span>&darr; &uarr;</span>
+            <span>S3(AWS)</span>
+          </div>
+          <span>&darr; &uarr;</span>
         </div>
         <div className={styles.road}>
           <div className={styles.status_container}>
@@ -172,14 +176,18 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
             <span className={backendConnection}></span>
           </div>
           <div className={styles.divider}>
-            <span>Nginx(HTTPS)</span>
-            <span>&darr;     &uarr;</span>
+            <span>EC2(AWS)</span>
+            <span>&darr; &uarr;</span>
             <div className={styles.divider}>
-              <span>Docker</span>
-              <span>&darr;     &uarr;</span>
-              <span>Backend(Container)</span>
-              <span>&darr;     &uarr;</span>
-              <span>PostgreSQL(Container)</span>
+              <span>Nginx(HTTPS)</span>
+              <span>&darr; &uarr;</span>
+              <div className={styles.divider}>
+                <span>Docker</span>
+                <span>&darr; &uarr;</span>
+                <span>Backend(Container)</span>
+                <span>&darr; &uarr;</span>
+                <span>PostgreSQL(Container)</span>
+              </div>
             </div>
           </div>
         </div>
