@@ -1,6 +1,6 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const API_SECRET = import.meta.env.VITE_API_SECRET || 'localhost';
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,6 +14,7 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
   const [backendConnection, setBackendConnection] = useState(
     styles.ping + ' ' + styles.connecting
   );
+  const fontendConnection = styles.ping + ' ' + styles.connected;
 
   useEffect(() => {
     document.title = 'Login';
@@ -159,7 +160,7 @@ const Login = ({ setIsAuthenticated, setUser, logOutHandler }) => {
         <div className={styles.road}>
           <div className={styles.status_container}>
             <span>Frontend status: </span>
-            <span className={backendConnection}></span>
+            <span className={fontendConnection}></span>
           </div>
           <span>Browser(HTTPS)</span>
           <span>&darr; &uarr;</span>
